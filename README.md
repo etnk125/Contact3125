@@ -1,6 +1,6 @@
 # EGCO427: Assignment 1(20%)–MAX. 2members/group
 Create the “Contact List” web application by using Node.js and/or Vue.js(v3). This web application must contain the list of features below.Your Vue project name must be “Contact<Last 4 Digits of StudentID>” such as Contact2345.Select ID from one of your group membersThere are 5 marks deduction if you do not set the the project name according to the assigned format.
-- (1 mark)Use MongoDB for your database.o
+- (1 mark)Use MongoDB for your database
   - Set your database name: ContactList
   - Set your collection name: Contacts-UI can be download from FormaticUI oSemantic UI: https://github.com/nightswinger/vue-fomantic-ui
 - The images can be downloaded from this URL below:
