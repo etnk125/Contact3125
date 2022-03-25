@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // need not to hash anymore bc. contact doesn't store password
-// const bcrypt = require("bcrypt");
+// const bcrypt = require("bcryptjs");
 
 const unique = require("mongoose-unique-validator");
 

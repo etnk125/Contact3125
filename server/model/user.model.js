@@ -12,8 +12,9 @@ const userSchema = new Schema({
 // apply unique validator
 userSchema.plugin(unique);
 
+/*
 // for hashing password
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 // hash before using user
 userSchema.pre("save", (next) => {
@@ -26,5 +27,6 @@ userSchema.pre("save", (next) => {
     next();
   });
 });
+*/
 
 module.exports = mongoose.model("User", userSchema);
