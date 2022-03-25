@@ -27,4 +27,4 @@ contactSchema.pre("save", (next) => {
 });
 */
 
-module.exports = mongoose.model("Contact", contactSchema);
+module.exports = mongoose.model("Contacts", contactSchema);
