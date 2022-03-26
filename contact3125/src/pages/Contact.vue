@@ -1,7 +1,7 @@
 <template>all contact page</template>
 
 <script>
-export default {};
+export default { name: "Contact" };
 </script>
 
 <style>

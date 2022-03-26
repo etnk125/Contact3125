@@ -1,7 +1,7 @@
 <template>edit contact page</template>
 
 <script>
-export default {};
+export default { name: "EditContact" };
 </script>
 
 <style>

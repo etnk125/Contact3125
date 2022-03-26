@@ -10,13 +10,14 @@ import Notfound from "../pages/Notfound.vue";
 const routerHistory = createWebHistory();
 
 // routing
+// https://router.vuejs.org/guide/migration/#removed-star-or-catch-all-routes
 const routes = [
   { path: "/", redirect: "/login" },
   { path: "/login", name: "Login ", component: Login },
   { path: "/contact", name: "Contact ", component: Contact },
   { path: "/contact/add", name: "AddContact ", component: AddContact },
   { path: "/contact/edit/:id", name: "EditContact ", component: EditContact },
-  { path: "*", name: "Notfound ", component: Notfound },
+  { path: "/:pathMatch(.*)*", name: "Notfound", component: Notfound },
 ];
 
 // create router
