@@ -8,11 +8,11 @@ const User = require("./model/user.model");
 const Contact = require("./model/contact.model");
 
 // import controller
-// const getOne = require("./controller/getOne.controller");
-// const getAll = require("./controller/getAll.controller");
-// const post = require("./controller/post.controller");
-// const edit = require("./controller/edit.controller");
-// const delete = require("./controller/delete.controller");
+const getOneController = require("./controller/getOne.controller");
+const getAllController = require("./controller/getAll.controller");
+const postController = require("./controller/post.controller");
+const editController = require("./controller/edit.controller");
+const deleteController = require("./controller/delete.controller");
 
 // need not to use bcryptjs
 // const bcrypt = require("bcryptjs");
@@ -23,16 +23,16 @@ const app = express();
 app.use(express.json());
 
 // get all contact
-app.get("/contacts/", (req, res) => {});
+app.get("/contacts/", getAllController);
 // get one contact
-app.get("/contacts/:id", (req, res) => {});
+app.get("/contacts/:id", getOneController);
 
 // add one contact
-app.post("/contacts", (req, res) => {});
+app.post("/contacts", postController);
 // edit one contact
-app.post("/contacts/:id", (req, res) => {});
+app.post("/contacts/:id", editController);
 
 // delete one contact
-app.delete("/contacts/:id", (req, res) => {});
+app.delete("/contacts/:id", deleteController);
 
 module.exports = app;
