@@ -1,7 +1,15 @@
-<template>edit contact page</template>
+<template>
+  <Navbar headerText="Edit Contact" />
+</template>
 
 <script>
-export default { name: "EditContact" };
+import Navbar from "../components/Navbar.vue";
+export default {
+  name: "EditContact",
+  components: {
+    Navbar,
+  },
+};
 </script>
 
 <style>
