@@ -1,7 +1,15 @@
-<template>add contact page</template>
+<template>
+  <Navbar headerText="Add Contact" />
+</template>
 
 <script>
-export default { name: "AddContact" };
+import Navbar from "../components/Navbar.vue";
+export default {
+  name: "AddContact",
+  components: {
+    Navbar,
+  },
+};
 </script>
 
 <style>
