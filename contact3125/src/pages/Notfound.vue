@@ -1,7 +1,7 @@
 <template>404 not found</template>
 
 <script>
-export default {};
+export default { name: "Notfound" };
 </script>
 
 <style>
