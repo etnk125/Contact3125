@@ -1,5 +1,5 @@
 <template>
-  <sui-menu stackable inverted>
+  <sui-menu inverted>
     <sui-menu-item>
       <img src="../assets/logo.png" alt="contact page" />
     </sui-menu-item>
