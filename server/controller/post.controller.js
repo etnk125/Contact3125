@@ -7,10 +7,8 @@ module.exports = (req, res) => {
     if (err) {
       console.log(`Error to add contact `);
       console.error(err);
-      return res.redirect("/");
-    } else {
-      res.json(contact);
+      return res.status(400).send();
     }
-    res.redirect("/");
+    res.json(contact);
   });
 };
