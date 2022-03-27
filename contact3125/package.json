@@ -6,6 +6,7 @@
     "build": "vite build"
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "fomantic-ui-css": "^2.8.8",
     "vue": "^3.0.4",
     "vue-fomantic-ui": "^0.11.0",
