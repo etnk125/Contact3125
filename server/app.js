@@ -13,7 +13,7 @@ const getAllController = require("./controller/getAll.controller");
 const postController = require("./controller/post.controller");
 const editController = require("./controller/edit.controller");
 const deleteController = require("./controller/delete.controller");
-
+const loginController = require("./controller/login.controller");
 // need not to use bcryptjs
 // const bcrypt = require("bcryptjs");
 
@@ -24,6 +24,14 @@ app.use(express.json());
 
 const cors = require("cors");
 app.use(cors());
+
+const bodyParser = require("body-parser");
+app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    extended: false,
+  })
+);
 
 // get all contact
 app.get("/contacts/", getAllController);
@@ -37,5 +45,11 @@ app.post("/contacts/:id", editController);
 
 // delete one contact
 app.delete("/contacts/:id", deleteController);
+
+// login
+app.post("/login", loginController);
+// app.get("/login", loginController);
+// get request should not have body
+// get work in postman but not work in browser
 
 module.exports = app;
