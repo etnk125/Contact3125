@@ -25,6 +25,14 @@ app.use(express.json());
 const cors = require("cors");
 app.use(cors());
 
+const bodyParser = require("body-parser");
+app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    extended: false,
+  })
+);
+
 // get all contact
 app.get("/contacts/", getAllController);
 // get one contact
