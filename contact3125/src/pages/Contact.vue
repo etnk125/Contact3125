@@ -1,14 +1,18 @@
 <template>
-  <Navbar headerText="Contact" />
-  <p>all contact page</p>
+  <Navbar headerText="Contacts" />
+  <sui-segment>
+    <SearchForm />
+  </sui-segment>
 </template>
 
 <script>
 import Navbar from "../components/Navbar.vue";
+import SearchForm from "../views/SearchForm.vue";
+
 export default {
-  name: "Contact",
   components: {
     Navbar,
+    SearchForm,
   },
 };
 </script>
