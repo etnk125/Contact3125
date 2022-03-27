@@ -22,6 +22,9 @@ const app = express();
 // https://www.geeksforgeeks.org/express-js-express-json-function/
 app.use(express.json());
 
+const cors = require("cors");
+app.use(cors());
+
 // get all contact
 app.get("/contacts/", getAllController);
 // get one contact
