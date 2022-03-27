@@ -11,9 +11,12 @@ const contactSchema = new Schema({
   firstname: { type: String, required: true },
   lastname: { type: String, required: true },
   mobile: { type: String, required: true },
-  email: String,
-  facebook: String,
-  imageUrl: String,
+  email: { type: String, default: "" },
+  facebook: { type: String, default: "" },
+  imageUrl: {
+    type: String,
+    default: "https://fomantic-ui.com/images/avatar2/large/kristy.png",
+  },
 });
 
 // for hashing password
