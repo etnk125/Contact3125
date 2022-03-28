@@ -1,3 +1,30 @@
+# Getting start
+
+## backend
+```cmd
+  cd server
+  npm install
+
+  // start backend server 
+  npm run dev
+```
+
+## frontend
+```cmd
+  cd contact3125
+  npm install
+
+  // start vue server
+  npm run dev
+```
+
+
+### note: open another terminal by click split 
+
+---
+
+
+
 # EGCO427: Assignment 1(20%)–MAX. 2members/group
 Create the “Contact List” web application by using Node.js and/or Vue.js(v3). This web application must contain the list of features below.Your Vue project name must be “Contact<Last 4 Digits of StudentID>” such as Contact2345.Select ID from one of your group membersThere are 5 marks deduction if you do not set the the project name according to the assigned format.
 - (1 mark)Use MongoDB for your database
