@@ -49,6 +49,8 @@
 
 <script>
 import Navbar from "../components/Navbar.vue";
+import { addContact } from "../services/contact.service";
+
 export default {
   data() {
     return {
@@ -66,6 +68,20 @@ export default {
   name: "AddContact",
   components: {
     Navbar,
+  },
+  methods: {
+    async submitHandler() {
+      try {
+        const resp = await addContact(this.contact);
+        console.log(resp);
+        if (resp.code == 11000) {
+          //implement unique handle here
+          console.err("please enter unique id");
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    },
   },
 };
 </script>
