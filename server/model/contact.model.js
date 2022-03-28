@@ -3,11 +3,11 @@ const Schema = mongoose.Schema;
 
 // need not to hash anymore bc. contact doesn't store password
 // const bcrypt = require("bcryptjs");
-
-const unique = require("mongoose-unique-validator");
+// can implement later
+// const unique = require("mongoose-unique-validator");
 
 const contactSchema = new Schema({
-  cid: { type: String, required: true, unique: true },
+  cid: { type: String, required: true, unique: false },
   firstname: { type: String, required: true },
   lastname: { type: String, required: true },
   mobile: { type: String, required: true },
