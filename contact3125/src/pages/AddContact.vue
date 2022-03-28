@@ -86,5 +86,12 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.segment-container {
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 30ch) 1fr;
+}
+.segments {
+  grid-column: 2;
+}
 </style>
