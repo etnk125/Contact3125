@@ -7,7 +7,7 @@ module.exports = (req, res) => {
     if (err) {
       console.log(`Error to add contact `);
       console.error(err);
-      return res.status(400).send();
+      return res.send(err);
     }
     res.json(contact);
   });
