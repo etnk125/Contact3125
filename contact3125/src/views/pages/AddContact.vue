@@ -14,7 +14,6 @@
 </template>
 
 <script>
-// import Navbar from "../components/Navbar.vue";
 import { addContact } from "../../services/contact.service";
 
 import FormHeader from "../components/FormHeader.vue";
@@ -36,7 +35,6 @@ export default {
   },
   name: "AddContact",
   components: {
-    // Navbar,
     FormHeader,
     FormBody,
   },
