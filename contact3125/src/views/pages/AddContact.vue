@@ -1,11 +1,9 @@
 <template>
   <div class="segment-container">
     <sui-segment-group>
+      <!-- header -->
       <sui-segment>
-        <sui-header as="h2">
-          Contact
-          <sui-label color="teal">Add</sui-label>
-        </sui-header>
+        <form-header formName="contact" formType="Add" formColor="teal" />
       </sui-segment>
       <sui-segment>
         <!-- form -->
