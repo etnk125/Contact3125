@@ -13,11 +13,11 @@ const routerHistory = createWebHistory();
 // https://router.vuejs.org/guide/migration/#removed-star-or-catch-all-routes
 const routes = [
   { path: "/", redirect: "/login" },
-  { path: "/login", name: "login", component: Login },
-  { path: "/contact", name: "contact", component: Contact },
-  { path: "/contact/add", name: "contact-add", component: AddContact },
-  { path: "/contact/edit/:id", name: "contact-edit", component: EditContact },
-  { path: "/:pathMatch(.*)*", name: "not-found", component: Notfound },
+  { path: "/login", name: "Login", component: Login },
+  { path: "/contact", name: "Contact", component: Contact },
+  { path: "/contact/add", name: "ContactAdd", component: AddContact },
+  { path: "/contact/edit/:id", name: "ContactEdit", component: EditContact },
+  { path: "/:pathMatch(.*)*", name: "NotFound", component: Notfound },
 ];
 
 // create router
