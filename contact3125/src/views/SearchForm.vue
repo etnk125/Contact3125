@@ -1,19 +1,21 @@
 <template>
-  <sui-segment color="teal">
-    <sui-label ribbon color="teal">Contacts</sui-label>
-    <!-- fix this later -->
-    <form @submit.prevent="submitHandler">
-      <sui-input icon="search" placeholder="Search..." v-model="query" />
-      <!-- <sui-input action="Search" placeholder="Search..." v-model="query" /> -->
-    </form>
-    <!-- fix this later -->
-    <sui-button color="orange">+ Add</sui-button>
+  <sui-segment id="upper-segment" color="teal">
+    <div>
+      <sui-label ribbon color="teal">Contacts</sui-label>
+    </div>
+    <div>
+      <form @submit.prevent="submitHandler">
+        <sui-input fluid icon="search" placeholder="Search..." v-model="query" />
+      </form>
+    </div>
+
+    <div class="add-button-wrapper">
+      <sui-button id="add-button" color="orange">+ Add</sui-button>
+    </div>
   </sui-segment>
 
   <sui-segment>
-    <!-- <ContactCardList :query="query" /> -->
-    <contact-card-list :query="query" />
-    <!-- card list -->
+    <contact-card-list :query="query" key="cards" />
   </sui-segment>
 </template>
 
@@ -46,6 +48,18 @@ export default {
 
 <style scoped>
 form {
-  display: inline;
+  /* display: inline; */
+}
+#upper-segment {
+  display: grid;
+  grid-template-columns: 1fr 13fr 2fr;
+  gap: 1%;
+  align-items: center;
+  /* justify-items: center; */
+  /* display: flex; */
+}
+
+.add-button-wrapper {
+  justify-self: center;
 }
 </style>
