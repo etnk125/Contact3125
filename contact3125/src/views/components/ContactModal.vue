@@ -1,6 +1,16 @@
 <template>
   <sui-modal v-model="modal">
-    <sui-modal-content>{{contact}}</sui-modal-content>
+    <sui-modal-header>{{contact.firstname}} {{contact.lastname}}</sui-modal-header>
+    <sui-modal-content image>
+      <sui-image wrapped size="medium" :src="contact.imageUrl" />
+      <sui-modal-description>
+        <sui-header>Contact ID: {{contact.cid}}</sui-header>
+        <p v-if="contact.email!=''">Email : {{contact.email}}</p>
+        <p v-if="contact.mobile!=''">Mobile : {{contact.mobile}}</p>
+        <p v-if="contact.facebook!=''">Facebook : {{contact.facebook}}</p>
+      </sui-modal-description>
+    </sui-modal-content>
+
     <sui-modal-actions>
       <sui-button positive @click="closeModal()">view profile</sui-button>
       <sui-button @click="closeModal()">close</sui-button>
