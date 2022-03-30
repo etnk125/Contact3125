@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 // import page
-import Login from "../pages/Login.vue";
-import Contact from "../pages/Contact.vue";
-import AddContact from "../pages/AddContact.vue";
-import EditContact from "../pages/EditContact.vue";
-import Notfound from "../pages/Notfound.vue";
+import Login from "../views/pages/Login.vue";
+import Contact from "../views/pages/Contact.vue";
+import AddContact from "../views/pages/AddContact.vue";
+import EditContact from "../views/pages/EditContact.vue";
+import Notfound from "../views/pages/Notfound.vue";
 
 // using web history
 const routerHistory = createWebHistory();
