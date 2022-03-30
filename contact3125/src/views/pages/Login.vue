@@ -1,6 +1,4 @@
 <template>
-  <navbar headerText="Login" />
-
   <!-- main content -->
   <main>
     <sui-segment class="login-container">
@@ -30,16 +28,15 @@
 </template>
 
 <script>
-import Navbar from "../components/Navbar.vue";
-import { login } from "../services/user.service";
+import { login } from "../../services/user.service";
 
 export default {
   data() {
-    return { user: { username: "", password: "" } };
+    return { user: { username: "bob", password: "1234" } };
   },
   name: "login",
   components: {
-    Navbar,
+    // Navbar,
   },
   methods: {
     notMatch() {

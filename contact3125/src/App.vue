@@ -1,14 +1,15 @@
 <template>
+  <Navbar />
   <router-view />
 </template>
 
 <script>
-import HelloWorld from "./components/ContactCard.vue";
+import Navbar from "./views/Navbar.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    Navbar,
   },
 };
 </script>

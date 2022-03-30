@@ -13,7 +13,7 @@
 import { onMounted } from "@vue/runtime-core";
 import { computed } from "vue";
 import { getContactList } from "../services/contact.service";
-import ContactCard from "../components/ContactCard.vue";
+import ContactCard from "./components/ContactCard.vue";
 
 export default {
   props: {

@@ -1,5 +1,4 @@
 <template>
-  <Navbar headerText="Add Contact" />
   <div class="segment-container">
     <sui-segment-group>
       <sui-segment>
@@ -48,8 +47,8 @@
 </template>
 
 <script>
-import Navbar from "../components/Navbar.vue";
-import { addContact } from "../services/contact.service";
+// import Navbar from "../components/Navbar.vue";
+import { addContact } from "../../services/contact.service";
 
 export default {
   data() {
@@ -67,7 +66,7 @@ export default {
   },
   name: "AddContact",
   components: {
-    Navbar,
+    // Navbar,
   },
   methods: {
     async submitHandler() {
