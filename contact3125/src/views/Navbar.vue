@@ -23,5 +23,8 @@
 <script>
 export default {};
 </script>
-<style>
+<style scoped>
+.menu {
+  align-items: center;
+}
 </style>
