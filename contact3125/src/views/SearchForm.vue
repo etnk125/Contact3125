@@ -55,8 +55,9 @@ form {
   grid-template-columns: 1fr 13fr 2fr;
   gap: 1%;
   align-items: center;
-  /* justify-items: center; */
-  /* display: flex; */
+  justify-items: center;
+}
+#upper-segment :nth-child(2) {
   width: 100%;
 }
 
