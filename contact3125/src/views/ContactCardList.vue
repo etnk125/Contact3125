@@ -5,7 +5,7 @@
         contact.firstname.includes(this.query) ||
         contact.lastname.includes(this.query))"
       :contact="contact"
-      :key="'card'+contact._id"
+      :key="'card-'+contact._id"
     />
   </sui-card-group>
 </template>

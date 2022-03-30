@@ -20,11 +20,6 @@ export default {
   props: {
     contact: Object,
   },
-  // setup({ contact }) {
-  //   onMounted(() => {
-  //     console.log(contact);
-  //   });
-  // },
   components: { ContactModal },
   data() {
     return { modal: false };

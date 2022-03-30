@@ -39,7 +39,7 @@
             <input type="text" placeholder="Image Url" v-model="contact.imageUrl" />
           </div>
 
-          <sui-button>Login</sui-button>
+          <sui-button>Add</sui-button>
         </sui-form>
       </sui-segment>
     </sui-segment-group>
@@ -88,7 +88,7 @@ export default {
 <style scoped>
 .segment-container {
   display: grid;
-  grid-template-columns: 1fr minmax(auto, 30ch) 1fr;
+  grid-template-columns: 1fr minmax(auto, 60ch) 1fr;
 }
 .segments {
   grid-column: 2;
