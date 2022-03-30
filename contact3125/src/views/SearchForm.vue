@@ -10,7 +10,9 @@
     </div>
 
     <div class="add-button-wrapper">
-      <sui-button id="add-button" color="orange">+ Add</sui-button>
+      <router-link :to="{name:'ContactAdd'}">
+        <sui-button id="add-button" color="orange">+ Add</sui-button>
+      </router-link>
     </div>
   </sui-segment>
 
