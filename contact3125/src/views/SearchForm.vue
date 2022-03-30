@@ -5,7 +5,7 @@
     </div>
     <div>
       <form @submit.prevent="submitHandler">
-        <sui-input fluid icon="search" placeholder="Search..." v-model="query" />
+        <sui-input fluid placeholder="Search..." v-model="query" />
       </form>
     </div>
 
@@ -57,9 +57,13 @@ form {
   align-items: center;
   /* justify-items: center; */
   /* display: flex; */
+  width: 100%;
 }
 
 .add-button-wrapper {
-  justify-self: center;
+  width: 100%;
+}
+#add-button {
+  width: 90%;
 }
 </style>
