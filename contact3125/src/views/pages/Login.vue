@@ -47,7 +47,7 @@ export default {
       try {
         const isMatch = (await login(this.user)).data;
         if (isMatch) {
-          this.$router.push({ name: "contact" });
+          this.$router.push({ name: "Contact" });
         } else {
           this.notMatch();
         }
