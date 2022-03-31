@@ -34,7 +34,6 @@ export default {
   data() {
     return { user: { username: "bob", password: "1234" } };
   },
-  name: "login",
   components: {
     // Navbar,
   },
