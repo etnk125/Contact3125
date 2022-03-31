@@ -16,8 +16,8 @@
 <script>
 import { addContact } from "../../services/contact.service";
 
-import FormHeader from "../components/FormHeader.vue";
-import FormBody from "../components/FormBody.vue";
+import FormHeader from "../../components/FormHeader.vue";
+import FormBody from "../../components/FormBody.vue";
 
 export default {
   data() {
@@ -33,7 +33,6 @@ export default {
       },
     };
   },
-  name: "AddContact",
   components: {
     FormHeader,
     FormBody,

@@ -37,7 +37,7 @@ export default {
   methods: {
     submitHandler() {
       console.log(this.query);
-      this.$router.push({ name: "Contact", query: { q: this.query } });
+      this.$router.push({ name: "ContactIndex", query: { q: this.query } });
       // this.query = "";
     },
     async fetchData() {

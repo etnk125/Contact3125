@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 // import page
 import Login from "../views/pages/Login.vue";
-import Contact from "../views/pages/Contact.vue";
-import AddContact from "../views/pages/AddContact.vue";
-import EditContact from "../views/pages/EditContact.vue";
+import ContactIndex from "../views/pages/ContactIndex.vue";
+import ContactAdd from "../views/pages/ContactAdd.vue";
+import ContactEdit from "../views/pages/ContactEdit.vue";
 import Notfound from "../views/pages/Notfound.vue";
 
 // using web history
@@ -14,9 +14,9 @@ const routerHistory = createWebHistory();
 const routes = [
   { path: "/", redirect: "/login" },
   { path: "/login", name: "Login", component: Login },
-  { path: "/contact", name: "Contact", component: Contact },
-  { path: "/contact/add", name: "ContactAdd", component: AddContact },
-  { path: "/contact/edit/:id", name: "ContactEdit", component: EditContact },
+  { path: "/contact", name: "ContactIndex", component: ContactIndex },
+  { path: "/contact/add", name: "ContactAdd", component: ContactAdd },
+  { path: "/contact/:id/edit", name: "ContactEdit", component: ContactEdit },
   { path: "/:pathMatch(.*)*", name: "NotFound", component: Notfound },
 ];
 
