@@ -3,11 +3,14 @@
     <!-- required -->
 
     <div class="required field">
-      <label>Contact ID</label>
+      <label>
+        Contact ID
+        <sui-label color="red" size="mini">ID must be unique</sui-label>
+      </label>
 
       <input
         v-if="edit"
-        disable
+        disabled
         required
         type="text"
         placeholder="Contact ID"

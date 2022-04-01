@@ -5,6 +5,7 @@
         contact.firstname.includes(this.query) ||
         contact.lastname.includes(this.query))"
       :contact="contact"
+      :editRoute="{name:'ContactEdit'}"
       :key="'card-'+contact._id"
     />
   </sui-card-group>
