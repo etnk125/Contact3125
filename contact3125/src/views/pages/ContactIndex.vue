@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import SearchForm from "../SearchForm.vue";
+import SearchForm from "../ContactSearchForm.vue";
 
 export default {
   components: {
