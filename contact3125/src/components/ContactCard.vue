@@ -11,6 +11,16 @@
       </sui-card-meta>
     </sui-card-content>
     <!-- action -->
+    <sui-card-content extra>
+      <router-link :to="{...editRoute, params:{id:contact.cid}   }">
+        <sui-button icon color="blue">
+          <sui-icon name="edit" />
+        </sui-button>
+      </router-link>
+      <sui-button icon color="red">
+        <sui-icon name="erase" />
+      </sui-button>
+    </sui-card-content>
   </sui-card>
   <contact-modal :contact="contact" :modal="modal" :closeModal="()=>(modal=false)" />
 </template>
@@ -33,5 +43,8 @@ export default {
 <style scoped>
 .content {
   text-align: center;
+}
+.buttons {
+  gap: 5px;
 }
 </style>
