@@ -7,3 +7,11 @@ export async function getContactList(q = "") {
 export async function addContact(contact) {
   return (await httpClient.post("/contacts", contact)).data;
 }
+export async function editContact(contact = {}) {
+  return (await httpClient.post("/contacts/" + contact.cid || "", contact))
+    .data;
+}
+
+export async function getContact(id = "") {
+  return (await httpClient.get("/contacts/" + id)).data;
+}
