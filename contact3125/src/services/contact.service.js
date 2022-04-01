@@ -4,7 +4,7 @@ export async function getContactList(q = "") {
   return (await httpClient.get("/contacts")).data;
 }
 
-export async function addContact(contact) {
+export async function addContact(contact = {}) {
   return (await httpClient.post("/contacts", contact)).data;
 }
 export async function editContact(contact = {}) {
