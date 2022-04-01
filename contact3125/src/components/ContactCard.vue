@@ -22,6 +22,7 @@ import ContactModal from "./ContactModal.vue";
 export default {
   props: {
     contact: Object,
+    editRoute: Object,
   },
   components: { ContactModal },
   data() {
