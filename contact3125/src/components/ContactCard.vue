@@ -1,6 +1,8 @@
 <template>
   <sui-card @click="modal=true">
+    <!-- main img -->
     <sui-image src="https://nightswinger.github.io/vue-fomantic-ui/images/avatar/large/kristy.png" />
+    <!-- description -->
     <sui-card-content>
       <sui-card-header>{{contact.firstname}} {{contact.lastname}}</sui-card-header>
       <sui-card-meta>
@@ -8,6 +10,7 @@
         <span>{{contact.mobile}}</span>
       </sui-card-meta>
     </sui-card-content>
+    <!-- action -->
   </sui-card>
   <contact-modal :contact="contact" :modal="modal" :closeModal="()=>(modal=false)" />
 </template>
