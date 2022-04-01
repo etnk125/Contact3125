@@ -6,7 +6,7 @@
       </sui-menu-item>
     </router-link>
 
-    <router-link :to="{name:'Contact'}">
+    <router-link :to="{name:'ContactIndex'}">
       <sui-menu-item>Contact</sui-menu-item>
     </router-link>
 
