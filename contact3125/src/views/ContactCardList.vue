@@ -6,6 +6,7 @@
         contact.lastname.includes(this.query))"
       :contact="contact"
       :editRoute="{name:'ContactEdit'}"
+      :deleteContact="deleteHandler"
       :key="'card-'+contact._id"
     />
   </sui-card-group>
@@ -14,7 +15,7 @@
 <script>
 import { onMounted } from "@vue/runtime-core";
 import { computed } from "vue";
-import { getContactList } from "../services/contact.service";
+import { deleteContact, getContactList } from "../services/contact.service";
 import ContactCard from "../components/ContactCard.vue";
 
 export default {
@@ -28,6 +29,18 @@ export default {
     this.contacts = await getContactList();
   },
   components: { ContactCard },
+  methods: {
+    deleteContact,
+    async deleteHandler(id) {
+      try {
+        const resp = await this.deleteContact(id);
+        console.log(resp);
+      } catch (err) {
+        console.error(err);
+      }
+      this.$router.go();
+    },
+  },
 };
 </script>
 
