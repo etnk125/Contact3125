@@ -1,7 +1,7 @@
 <template>
-  <sui-card @click="modal=true">
+  <sui-card>
     <!-- main img -->
-    <sui-image src="https://nightswinger.github.io/vue-fomantic-ui/images/avatar/large/kristy.png" />
+    <sui-image @click="cardClickHandler" :src="contact.imageUrl" />
     <!-- description -->
     <sui-card-content>
       <sui-card-header>{{contact.firstname}} {{contact.lastname}}</sui-card-header>
