@@ -15,3 +15,8 @@ export async function editContact(contact = {}) {
 export async function getContact(id = "") {
   return (await httpClient.get("/contacts/" + id)).data;
 }
+
+export async function deleteContact(id = "") {
+  console.log("delete");
+  return (await httpClient.delete("/contacts/" + id)).data;
+}
