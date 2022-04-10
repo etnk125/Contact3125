@@ -14,7 +14,7 @@
 
 <script>
 import { onMounted } from "@vue/runtime-core";
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { deleteContact, getContactList } from "../services/contact.service";
 import ContactCard from "../components/ContactCard.vue";
 
@@ -23,11 +23,17 @@ export default {
     query: String,
   },
   data() {
-    return { contacts: [] };
+    return {
+      // contacts: [],
+    };
   },
-  async created() {
-    this.contacts = await getContactList();
+  async setup() {
+    const contacts = ref(await getContactList());
+    return { contacts };
   },
+  // async created() {
+  //   this.fetchContact();
+  // },
   components: { ContactCard },
   methods: {
     deleteContact,
@@ -38,7 +44,10 @@ export default {
       } catch (err) {
         console.error(err);
       }
-      this.$router.go();
+      this.fetchContact();
+    },
+    async fetchContact() {
+      this.contacts = await getContactList();
     },
   },
 };
