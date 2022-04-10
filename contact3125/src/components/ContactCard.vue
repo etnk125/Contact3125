@@ -51,6 +51,9 @@ export default {
   },
   methods: {
     cardClickHandler() {
+      // reset
+      this.contactModal = false;
+      // apply
       this.contactModal = true;
     },
     async deleteHandler() {
