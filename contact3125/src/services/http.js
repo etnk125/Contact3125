@@ -2,7 +2,7 @@ import axios from "axios";
 
 // work in local
 // const URL = "http://localhost:5000";
-// for deployment
+// deployment
 const URL = "https://contact3125.herokuapp.com/";
 
 const httpClient = axios.create({
