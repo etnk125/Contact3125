@@ -45,8 +45,17 @@
       <label>Image Url</label>
       <input type="text" placeholder="Image Url" v-model="contact.imageUrl" />
     </div>
-
-    <sui-button>{{edit?"Save":'Add'}}</sui-button>
+    <sui-button-group>
+      <sui-button basic color="blue">
+        <sui-icon :name="edit?'save':'add'" />
+        {{edit?"Save":'Add'}}
+      </sui-button>
+      <router-link to="/contact">
+        <sui-button basic color="blue">
+          <sui-icon color="red" name="close" />Close
+        </sui-button>
+      </router-link>
+    </sui-button-group>
   </sui-form>
 </template>
 
@@ -60,5 +69,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.buttons {
+  max-width: 300px;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+}
 </style>

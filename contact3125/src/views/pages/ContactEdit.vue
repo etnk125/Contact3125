@@ -3,7 +3,7 @@
     <sui-segment-group>
       <!-- header -->
       <sui-segment>
-        <form-header formName="contact" formType="Edit" formColor="teal" />
+        <form-header formName="Contact" formType="Edit" formColor="teal" />
       </sui-segment>
       <!-- body -->
       <sui-segment>
