@@ -5,9 +5,18 @@
       <sui-image wrapped size="medium" :src="contact.imageUrl" />
       <sui-modal-description>
         <sui-header>Contact ID: {{contact.cid}}</sui-header>
-        <p v-if="contact.email!=''">Email : {{contact.email}}</p>
-        <p v-if="contact.mobile!=''">Mobile : {{contact.mobile}}</p>
-        <p v-if="contact.facebook!=''">Facebook : {{contact.facebook}}</p>
+        <p v-if="contact.email!=''">
+          <sui-icon name="envelope" color="orange" />
+          {{contact.email}}
+        </p>
+        <p v-if="contact.mobile!=''">
+          <sui-icon name="mobile" color="grey" />
+          {{contact.mobile}}
+        </p>
+        <p v-if="contact.facebook!=''">
+          <sui-icon name="facebook" color="blue" />
+          {{contact.facebook}}
+        </p>
       </sui-modal-description>
     </sui-modal-content>
 
