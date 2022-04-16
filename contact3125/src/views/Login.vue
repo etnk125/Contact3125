@@ -20,7 +20,10 @@
           <input required type="password" placeholder="Password" v-model="user.password" />
         </div>
 
-        <sui-button>Login</sui-button>
+        <sui-button>
+          <sui-icon name="spinner" loading v-if="loading" />
+          <span>Login</span>
+        </sui-button>
       </sui-form>
     </sui-segment>
   </main>
@@ -31,7 +34,10 @@ import { login } from "../services/user.service";
 
 export default {
   data() {
-    return { user: { username: "bob", password: "1234" } };
+    return {
+      loading: false,
+      user: { username: "bob", password: "1234" },
+    };
   },
   methods: {
     notMatch() {
@@ -39,6 +45,7 @@ export default {
       // tell user that not match
     },
     async submitHandler() {
+      this.loading = true;
       try {
         const isMatch = (await login(this.user)).data;
         if (isMatch) {
@@ -49,6 +56,7 @@ export default {
       } catch (err) {
         console.error(err);
       }
+      this.loading = false;
     },
   },
 };
