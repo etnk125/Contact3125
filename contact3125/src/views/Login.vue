@@ -1,7 +1,7 @@
 <template>
   <!-- main content -->
   <main>
-    <sui-segment class="login-container">
+    <sui-segment class="login-container" stacked>
       <!-- heading -->
       <sui-segment color="teal">
         <sui-label ribbon color="teal">Login</sui-label>
