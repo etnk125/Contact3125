@@ -34,9 +34,6 @@ export default {
   data() {
     return { user: { username: "bob", password: "1234" } };
   },
-  components: {
-    // Navbar,
-  },
   methods: {
     notMatch() {
       console.log("wrong username or password");
