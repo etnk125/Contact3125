@@ -17,7 +17,7 @@
           <sui-icon name="edit" />
         </sui-button>
       </router-link>
-      <sui-button icon color="red" @click="contactDeleteModal=true">
+      <sui-button icon color="red" @click="deleteButtonClickHandler">
         <sui-icon name="trash alternate" />
       </sui-button>
     </sui-card-content>
@@ -53,8 +53,16 @@ export default {
     cardClickHandler() {
       // reset
       this.contactModal = false;
+      this.contactDeleteModal = false;
       // apply
       this.contactModal = true;
+    },
+    deleteButtonClickHandler() {
+      // reset
+      this.contactModal = false;
+      this.contactDeleteModal = false;
+      // apply
+      this.contactDeleteModal = true;
     },
     async deleteHandler() {
       this.contactDeleteModal = false;

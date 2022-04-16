@@ -24,7 +24,7 @@
 <script>
 export default {
   props: {
-    modal: false,
+    modal: Boolean,
     contact: Object,
     closeModal: Function,
     deleteHandler: Function,
