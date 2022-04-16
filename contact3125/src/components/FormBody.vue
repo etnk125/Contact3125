@@ -47,7 +47,8 @@
     </div>
     <sui-button-group>
       <sui-button basic color="blue">
-        <sui-icon :name="edit?'save':'add'" />
+        <sui-icon v-if="loading" name="spinner" loading />
+        <sui-icon v-else :name="edit?'save':'add'" />
         {{edit?"Save":'Add'}}
       </sui-button>
       <router-link to="/contact">
@@ -61,10 +62,20 @@
 
 <script>
 export default {
+  data() {
+    return { loading: false };
+  },
   props: {
     submitHandler: Function,
     contact: Object,
     edit: false,
+  },
+  methods: {
+    async submitHandler() {
+      this.loading = true;
+      await this.submitHandler();
+      this.loading = false;
+    },
   },
 };
 </script>
