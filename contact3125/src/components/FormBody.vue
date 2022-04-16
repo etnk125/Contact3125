@@ -1,5 +1,5 @@
 <template>
-  <sui-form @submit.prevent="submitHandler">
+  <sui-form @submit.prevent="formHandler">
     <!-- required -->
 
     <div class="required field">
@@ -47,7 +47,8 @@
     </div>
     <sui-button-group>
       <sui-button basic color="blue">
-        <sui-icon :name="edit?'save':'add'" />
+        <sui-icon v-if="loading" name="spinner" loading />
+        <sui-icon v-else :name="edit?'save':'add'" />
         {{edit?"Save":'Add'}}
       </sui-button>
       <router-link to="/contact">
@@ -57,14 +58,32 @@
       </router-link>
     </sui-button-group>
   </sui-form>
+  <div v-if="dimmed">
+    <sui-dimmer active="dimmed" page @click="dimmed = false">
+      <sui-header as="h2" icon inverted>
+        <sui-icon name="save" />Saved Contact!
+      </sui-header>
+    </sui-dimmer>
+  </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return { loading: false, dimmed: false };
+  },
   props: {
     submitHandler: Function,
     contact: Object,
     edit: false,
+  },
+  methods: {
+    async formHandler() {
+      this.loading = true;
+      await this.submitHandler();
+      this.loading = false;
+      this.dimmed = true;
+    },
   },
 };
 </script>
