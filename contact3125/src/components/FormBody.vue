@@ -28,7 +28,7 @@
     </div>
     <div class="required field">
       <label>Mobile No</label>
-      <input required type="text" placeholder="Mobile No" v-model="contact.mobile" />
+      <input required type="tel" placeholder="Mobile No" v-model="contact.mobile" />
     </div>
 
     <!-- non require -->
@@ -39,11 +39,11 @@
     </div>
     <div class="field">
       <label>Facebook</label>
-      <input type="text" placeholder="Facebook" v-model="contact.facebook" />
+      <input type="url" placeholder="Facebook" v-model="contact.facebook" />
     </div>
     <div class="field">
       <label>Image Url</label>
-      <input type="text" placeholder="Image Url" v-model="contact.imageUrl" />
+      <input type="url" placeholder="Image Url" v-model="contact.imageUrl" />
     </div>
     <sui-button-group>
       <sui-button basic color="blue">
