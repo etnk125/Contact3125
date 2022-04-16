@@ -17,8 +17,7 @@
         <!-- same as sui-form-field -->
         <div class="required field">
           <label>Password</label>
-          <!-- change type to password later -->
-          <input required type="text" placeholder="Password" v-model="user.password" />
+          <input required type="password" placeholder="Password" v-model="user.password" />
         </div>
 
         <sui-button>Login</sui-button>

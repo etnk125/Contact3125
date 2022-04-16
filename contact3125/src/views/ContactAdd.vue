@@ -44,7 +44,7 @@ export default {
         console.log(resp);
         if (resp.code == 11000) {
           //implement unique handle here
-          console.err("please enter unique id");
+          console.error("please enter unique id");
         }
       } catch (err) {
         console.error(err);
