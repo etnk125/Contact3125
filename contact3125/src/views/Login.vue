@@ -1,7 +1,7 @@
 <template>
   <!-- main content -->
   <main>
-    <sui-segment class="login-container">
+    <sui-segment class="login-container" stacked>
       <!-- heading -->
       <sui-segment color="teal">
         <sui-label ribbon color="teal">Login</sui-label>
@@ -33,9 +33,6 @@ import { login } from "../services/user.service";
 export default {
   data() {
     return { user: { username: "bob", password: "1234" } };
-  },
-  components: {
-    // Navbar,
   },
   methods: {
     notMatch() {
