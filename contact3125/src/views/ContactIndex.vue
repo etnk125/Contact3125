@@ -16,7 +16,9 @@
     </div>
   </sui-segment>
   <suspense>
-    <template #fallback>loading..</template>
+    <template #fallback>
+      <sui-icon name="spinner" loading />
+    </template>
     <template #default>
       <sui-segment>
         <contact-card-list :query="query" key="cards" />
@@ -72,5 +74,12 @@ form {
 }
 #add-button {
   width: 90%;
+}
+.loading {
+  display: flex;
+  margin: 2rem auto;
+  /* justify-content: center;
+  justify-items: center; */
+  justify-self: center;
 }
 </style>
