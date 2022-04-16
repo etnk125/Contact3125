@@ -15,10 +15,14 @@
       </router-link>
     </div>
   </sui-segment>
-
-  <sui-segment>
-    <contact-card-list :query="query" key="cards" />
-  </sui-segment>
+  <suspense>
+    <template #fallback>loading..</template>
+    <template #default>
+      <sui-segment>
+        <contact-card-list :query="query" key="cards" />
+      </sui-segment>
+    </template>
+  </suspense>
 </template>
 
 <script>
