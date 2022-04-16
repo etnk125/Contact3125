@@ -27,7 +27,7 @@
 
 <script>
 import { ref, onMounted } from "vue";
-import ContactCardList from "./ContactCardList.vue";
+import ContactCardList from "../components/ContactCardList.vue";
 import { getContactList } from "../services/contact.service";
 import { useRoute } from "vue-router";
 
