@@ -3,23 +3,21 @@
     <sui-segment-group>
       <!-- header -->
       <sui-segment>
-        <form-header formName="Contact" formType="Edit" formColor="teal" />
+        <form-header formName="Contact" formType="Add" formColor="teal" />
       </sui-segment>
       <!-- body -->
       <sui-segment>
-        <form-body :submitHandler="submitHandler" :contact="this.contact" :edit="true" />
+        <form-body :submitHandler="submitHandler" :contact="this.contact" :edit="false" />
       </sui-segment>
     </sui-segment-group>
   </div>
 </template>
 
 <script>
-import { useRoute } from "vue-router";
+import { addContact } from "../services/contact.service";
 
-import { editContact, getContact } from "../../services/contact.service";
-
-import FormHeader from "../../components/FormHeader.vue";
-import FormBody from "../../components/FormBody.vue";
+import FormHeader from "../components/FormHeader.vue";
+import FormBody from "../components/FormBody.vue";
 
 export default {
   data() {
@@ -42,7 +40,7 @@ export default {
   methods: {
     async submitHandler() {
       try {
-        const resp = await editContact(this.contact);
+        const resp = await addContact(this.contact);
         console.log(resp);
         if (resp.code == 11000) {
           //implement unique handle here
@@ -52,15 +50,6 @@ export default {
         console.error(err);
       }
     },
-  },
-  async created() {
-    try {
-      this.contact = await getContact(useRoute().params.id);
-      console.log(this.contact);
-    } catch (err) {
-      console.log("error occur when get contact by id");
-      console.error(err);
-    }
   },
 };
 </script>
