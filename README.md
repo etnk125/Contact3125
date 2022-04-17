@@ -95,10 +95,6 @@ Create the “Contact List” web application by using Node.js and/or Vue.js(v3)
   - Member:
     - [Natthawee Koengfak](https://github.com/etnk125) ID: 6213125
     - [Nicharee Chaloemsuksri](https://github.com/nnichar) ID: 6213198
-  - Member:
-    - [Natthawee Koengfak](https://github.com/etnk125) ID: 6213125
-    - [Nicharee Chaloemsuksri](https://github.com/nnichar) ID: 6213198
-
 
 
 - Submit only the bitbucket URL to Microsoft Team and only one submission per group
