@@ -18,6 +18,8 @@ import { computed, ref } from "vue";
 import { deleteContact, getContactList } from "../services/contact.service";
 import ContactCard from "../components/ContactCard.vue";
 
+import store from "../store";
+
 export default {
   props: {
     query: String,
@@ -42,6 +44,7 @@ export default {
         const resp = await this.deleteContact(id);
         console.log(resp);
       } catch (err) {
+        store.addMessage("something went wrong");
         console.error(err);
       }
       this.fetchContact();
