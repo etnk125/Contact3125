@@ -2,8 +2,8 @@
   <sui-card-group>
     <ContactCard
       v-for="contact in contacts.filter((contact) =>
-        contact.firstname.includes(this.query) ||
-        contact.lastname.includes(this.query))"
+        contact.firstname.toLowerCase().includes(query.toLowerCase()) ||
+        contact.lastname.toLowerCase().includes(query.toLowerCase()))"
       :contact="contact"
       :editRoute="{name:'ContactEdit'}"
       :deleteContact="deleteHandler"
@@ -18,36 +18,41 @@ import { computed, ref } from "vue";
 import { deleteContact, getContactList } from "../services/contact.service";
 import ContactCard from "../components/ContactCard.vue";
 
+import store from "../store";
+
 export default {
   props: {
     query: String,
   },
-  data() {
-    return {
-      // contacts: [],
-    };
-  },
   async setup() {
-    const contacts = ref(await getContactList());
+    let contacts = [];
+    try {
+      contacts = ref(await getContactList());
+    } catch (err) {
+      store.addMessage("something went wrong");
+      console.error(err);
+    }
     return { contacts };
   },
-  // async created() {
-  //   this.fetchContact();
-  // },
   components: { ContactCard },
   methods: {
     deleteContact,
     async deleteHandler(id) {
       try {
         const resp = await this.deleteContact(id);
-        console.log(resp);
       } catch (err) {
+        store.addMessage("something went wrong");
         console.error(err);
       }
       this.fetchContact();
     },
     async fetchContact() {
-      this.contacts = await getContactList();
+      try {
+        this.contacts = await getContactList();
+      } catch (err) {
+        store.addMessage("something went wrong");
+        console.error(err);
+      }
     },
   },
 };

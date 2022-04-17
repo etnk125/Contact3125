@@ -7,7 +7,13 @@
       </sui-segment>
       <!-- body -->
       <sui-segment>
-        <form-body :submitHandler="submitHandler" :contact="this.contact" :edit="false" />
+        <form-body
+          :submitHandler="submitHandler"
+          :contact="this.contact"
+          :edit="false"
+          :dimmed="saved"
+          :onClose="()=>{saved=false}"
+        />
       </sui-segment>
     </sui-segment-group>
   </div>
@@ -18,6 +24,7 @@ import { addContact } from "../services/contact.service";
 
 import FormHeader from "../components/FormHeader.vue";
 import FormBody from "../components/FormBody.vue";
+import store from "../store";
 
 export default {
   data() {
@@ -31,6 +38,7 @@ export default {
         facebook: "",
         imageUrl: "",
       },
+      saved: false,
     };
   },
   components: {
@@ -39,16 +47,22 @@ export default {
   },
   methods: {
     async submitHandler() {
+      this.saved = false;
       try {
         const resp = await addContact(this.contact);
-        console.log(resp);
+
         if (resp.code == 11000) {
-          //implement unique handle here
-          console.err("please enter unique id");
+          // this id already taken
+          store.addMessage("please enter unique id");
+          console.error("please enter unique id");
+          return;
         }
       } catch (err) {
+        store.addMessage("something went wrong");
         console.error(err);
+        return;
       }
+      this.saved = true;
     },
   },
 };

@@ -1,28 +1,32 @@
 <template>
-  <sui-segment id="upper-segment" color="teal">
-    <div>
-      <sui-label ribbon color="teal">Contacts</sui-label>
-    </div>
-    <div>
-      <form @submit.prevent="submitHandler">
-        <sui-input fluid placeholder="Search..." v-model="query" />
-      </form>
-    </div>
+  <sui-segment>
+    <sui-segment id="upper-segment" color="teal">
+      <div>
+        <sui-label ribbon color="teal">Contacts</sui-label>
+      </div>
+      <div>
+        <form @submit.prevent="submitHandler">
+          <sui-input fluid placeholder="Search..." v-model="query" />
+        </form>
+      </div>
 
-    <div class="add-button-wrapper">
-      <router-link :to="{name:'ContactAdd'}">
-        <sui-button id="add-button" color="orange">+ Add</sui-button>
-      </router-link>
-    </div>
+      <div class="add-button-wrapper">
+        <router-link :to="{name:'ContactAdd'}">
+          <sui-button id="add-button" color="orange">+ Add</sui-button>
+        </router-link>
+      </div>
+    </sui-segment>
+    <suspense>
+      <template #fallback>
+        <sui-icon name="spinner" loading />
+      </template>
+      <template #default>
+        <sui-segment>
+          <contact-card-list :query="query" />
+        </sui-segment>
+      </template>
+    </suspense>
   </sui-segment>
-  <suspense>
-    <template #fallback>loading..</template>
-    <template #default>
-      <sui-segment>
-        <contact-card-list :query="query" key="cards" />
-      </sui-segment>
-    </template>
-  </suspense>
 </template>
 
 <script>
@@ -30,6 +34,7 @@ import { ref, onMounted } from "vue";
 import ContactCardList from "../components/ContactCardList.vue";
 import { getContactList } from "../services/contact.service";
 import { useRoute } from "vue-router";
+import store from "../store";
 
 export default {
   data() {
@@ -40,22 +45,22 @@ export default {
   },
   methods: {
     submitHandler() {
-      console.log(this.query);
       this.$router.push({ name: "ContactIndex", query: { q: this.query } });
-      // this.query = "";
     },
     async fetchData() {
-      const data = await getContactList();
-      return data;
+      try {
+        const data = await getContactList();
+        return data;
+      } catch (err) {
+        store.addMessage("something went wrong");
+        console.error(err);
+      }
     },
   },
 };
 </script>
 
 <style scoped>
-form {
-  /* display: inline; */
-}
 #upper-segment {
   display: grid;
   grid-template-columns: 1fr 13fr 2fr;
@@ -72,5 +77,10 @@ form {
 }
 #add-button {
   width: 90%;
+}
+.loading {
+  display: flex;
+  margin: 2rem auto;
+  justify-self: center;
 }
 </style>

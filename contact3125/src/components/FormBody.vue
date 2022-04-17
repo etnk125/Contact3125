@@ -1,5 +1,5 @@
 <template>
-  <sui-form @submit.prevent="submitHandler">
+  <sui-form @submit.prevent="formHandler">
     <!-- required -->
 
     <div class="required field">
@@ -28,43 +28,70 @@
     </div>
     <div class="required field">
       <label>Mobile No</label>
-      <input required type="text" placeholder="Mobile No" v-model="contact.mobile" />
+      <input
+        required
+        type="tel"
+        pattern="[+]{0,1}[0-9]{10,15}"
+        placeholder="e.g. +66912345678 or 0912345678"
+        v-model="contact.mobile"
+      />
     </div>
 
     <!-- non require -->
 
     <div class="field">
       <label>Email</label>
-      <input type="text" placeholder="Email" v-model="contact.email" />
+      <input type="email" placeholder="e.g. bob@example.com" v-model="contact.email" />
     </div>
     <div class="field">
       <label>Facebook</label>
-      <input type="text" placeholder="Facebook" v-model="contact.facebook" />
+      <input type="url" placeholder="Facebook URL" v-model="contact.facebook" />
     </div>
     <div class="field">
       <label>Image Url</label>
-      <input type="text" placeholder="Image Url" v-model="contact.imageUrl" />
+      <input type="url" placeholder="Image Url" v-model="contact.imageUrl" />
     </div>
     <sui-button-group>
       <sui-button basic color="blue">
-        <sui-icon :name="edit?'save':'add'" />
+        <sui-icon v-if="loading" name="spinner" loading />
+        <sui-icon v-else :name="edit?'save':'add'" />
         {{edit?"Save":'Add'}}
       </sui-button>
       <router-link to="/contact">
-        <sui-button basic color="blue">
+        <sui-button basic color="blue" id="close-button">
           <sui-icon color="red" name="close" />Close
         </sui-button>
       </router-link>
     </sui-button-group>
   </sui-form>
+  <div v-if="dimmed">
+    <sui-dimmer :active="true" page @click="onClose">
+      <sui-header as="h2" icon inverted>
+        <sui-icon name="save" />Saved Contact!
+        <sui-header-subheader tiny>press to continue</sui-header-subheader>
+      </sui-header>
+    </sui-dimmer>
+  </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return { loading: false };
+  },
   props: {
     submitHandler: Function,
     contact: Object,
-    edit: false,
+    edit: Boolean,
+    dimmed: Boolean,
+    onClose: Function,
+  },
+  methods: {
+    async formHandler() {
+      this.loading = true;
+      await this.submitHandler();
+      this.loading = false;
+    },
   },
 };
 </script>
@@ -75,5 +102,12 @@ export default {
   width: 80%;
   margin: 0 auto;
   display: flex;
+}
+.dimmer:hover {
+  cursor: pointer;
+}
+#close-button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 </style>

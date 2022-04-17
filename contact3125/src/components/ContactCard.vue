@@ -6,8 +6,9 @@
     <sui-card-content>
       <sui-card-header>{{contact.firstname}} {{contact.lastname}}</sui-card-header>
       <sui-card-meta>
-        <p>{{contact.email}}</p>
-        <span>{{contact.mobile}}</span>
+        <div>Mobile: {{contact.mobile}}</div>
+        <div>Email: {{contact.email}}</div>
+        <div v-if="contact.facebook!=''">Facebook: {{contact.facebook}}</div>
       </sui-card-meta>
     </sui-card-content>
     <!-- action -->
@@ -17,7 +18,7 @@
           <sui-icon name="edit" />
         </sui-button>
       </router-link>
-      <sui-button icon color="red" @click="contactDeleteModal=true">
+      <sui-button icon color="red" @click="deleteButtonClickHandler">
         <sui-icon name="trash alternate" />
       </sui-button>
     </sui-card-content>
@@ -53,8 +54,16 @@ export default {
     cardClickHandler() {
       // reset
       this.contactModal = false;
+      this.contactDeleteModal = false;
       // apply
       this.contactModal = true;
+    },
+    deleteButtonClickHandler() {
+      // reset
+      this.contactModal = false;
+      this.contactDeleteModal = false;
+      // apply
+      this.contactDeleteModal = true;
     },
     async deleteHandler() {
       this.contactDeleteModal = false;
@@ -69,5 +78,10 @@ export default {
 }
 .buttons {
   gap: 5px;
+}
+img:hover {
+  cursor: pointer;
+  opacity: 0.9;
+  transition: all 0.1s ease-in-out;
 }
 </style>
