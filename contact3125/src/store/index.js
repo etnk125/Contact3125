@@ -1,5 +1,6 @@
 import { reactive } from "vue";
 
+// error bound
 const store = reactive({
   currentID: 0,
   errMessages: [{ ID: 0, message: "this is err" }],
@@ -8,9 +9,6 @@ const store = reactive({
   },
   removeMessage(ID) {
     this.errMessages = this.errMessages.filter((message) => message.ID != ID);
-    // this.errMessages = [
-    //   ...this.errMessages.filter((message) => message.ID != ID),
-    // ];
   },
   clearMessage() {
     this.errMessages = [];

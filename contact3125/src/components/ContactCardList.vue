@@ -24,11 +24,6 @@ export default {
   props: {
     query: String,
   },
-  data() {
-    return {
-      // contacts: [],
-    };
-  },
   async setup() {
     let contacts = [];
     try {
@@ -39,16 +34,12 @@ export default {
     }
     return { contacts };
   },
-  // async created() {
-  //   this.fetchContact();
-  // },
   components: { ContactCard },
   methods: {
     deleteContact,
     async deleteHandler(id) {
       try {
         const resp = await this.deleteContact(id);
-        console.log(resp);
       } catch (err) {
         store.addMessage("something went wrong");
         console.error(err);
