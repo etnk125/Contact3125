@@ -89,8 +89,12 @@ Create the “Contact List” web application by using Node.js and/or Vue.js(v3)
 - Add the  repository  URL,  your  virtual  host  URLand  the  list  of  members  in  your  group  including student ID and Full name to Readme.txt and upload to your bitbucket under “Info” folder.
 - **Readme.txt**
   - Repository URL : https://bitbucket.org/nnichary/contact3125/
-  - Vue Server : https://contact3125.firebaseapp.com/
-  - Node Server : https://contact3125.herokuapp.com/
+  - Vue Server : [https://contact3125.firebaseapp.com/](https://contact3125.firebaseapp.com/)
+  - Node Server : [https://contact3125.herokuapp.com/](https://contact3125.herokuapp.com/)
+  - Demonstration Clip : https://youtu.be/oAfo8H4NLYI
+  - Member:
+    - [Natthawee Koengfak](https://github.com/etnk125) ID: 6213125
+    - [Nicharee Chaloemsuksri](https://github.com/nnichar) ID: 6213198
   - Member:
     - [Natthawee Koengfak](https://github.com/etnk125) ID: 6213125
     - [Nicharee Chaloemsuksri](https://github.com/nnichar) ID: 6213198
