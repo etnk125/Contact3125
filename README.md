@@ -88,12 +88,15 @@ Create the “Contact List” web application by using Node.js and/or Vue.js(v3)
 - Upload  your  code  to bitbucket and  set  your  repository  as  a  private  repository.  Then  add  my account: [lalita.nar@mahidol.edu] as your collaborator to your repository.
 - Add the  repository  URL,  your  virtual  host  URLand  the  list  of  members  in  your  group  including student ID and Full name to Readme.txt and upload to your bitbucket under “Info” folder.
 - **Readme.txt**
-  - Repository URL: [http://bitbucket.com/username/Contact2345]
-  - Vue Server: [http://username.firebase.app/Contact2345]
-  - Node Server: [http://username.gcloud.com/Contact2345]
+  - Repository URL : https://bitbucket.org/nnichary/contact3125/
+  - Vue Server : https://contact3125.firebaseapp.com/
+  - Node Server : https://contact3125.herokuapp.com/
   - Member:
     - [Natthawee Koengfak](https://github.com/etnk125) ID: 6213125
     - [Nicharee Chaloemsuksri](https://github.com/nnichar) ID: 6213198
+
+
+
 - Submit only the bitbucket URL to Microsoft Team and only one submission per group
 ---
 # Assignment 1
