@@ -6,8 +6,9 @@
     <sui-card-content>
       <sui-card-header>{{contact.firstname}} {{contact.lastname}}</sui-card-header>
       <sui-card-meta>
-        <p>{{contact.email}}</p>
-        <span>{{contact.mobile}}</span>
+        <div>Mobile: {{contact.mobile}}</div>
+        <div>Email: {{contact.email}}</div>
+        <div v-if="contact.facebook!=''">Facebook: {{contact.facebook}}</div>
       </sui-card-meta>
     </sui-card-content>
     <!-- action -->
