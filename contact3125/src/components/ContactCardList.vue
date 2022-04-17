@@ -30,7 +30,13 @@ export default {
     };
   },
   async setup() {
-    const contacts = ref(await getContactList());
+    let contacts = [];
+    try {
+      contacts = ref(await getContactList());
+    } catch (err) {
+      store.addMessage("something went wrong");
+      console.error(err);
+    }
     return { contacts };
   },
   // async created() {
@@ -50,7 +56,12 @@ export default {
       this.fetchContact();
     },
     async fetchContact() {
-      this.contacts = await getContactList();
+      try {
+        this.contacts = await getContactList();
+      } catch (err) {
+        store.addMessage("something went wrong");
+        console.error(err);
+      }
     },
   },
 };

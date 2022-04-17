@@ -73,6 +73,7 @@ export default {
       console.log(this.contact);
     } catch (err) {
       console.log("error occur when get contact by id");
+      store.addMessage("error occur when get contact by id");
       console.error(err);
     }
   },
