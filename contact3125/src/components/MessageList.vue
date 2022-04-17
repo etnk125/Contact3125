@@ -1,7 +1,10 @@
 <template>
-  <div v-for="message in errMessages">
-    <Message :message="message.message" :ID="message.ID" />
-  </div>
+  <Message
+    v-for="message in errMessages"
+    :message="message.message"
+    :ID="message.ID"
+    :key="'message-'+message.ID"
+  />
 </template>
 
 <script>
