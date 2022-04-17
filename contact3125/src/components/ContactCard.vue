@@ -78,4 +78,9 @@ export default {
 .buttons {
   gap: 5px;
 }
+img:hover {
+  cursor: pointer;
+  opacity: 0.9;
+  transition: all 0.1s ease-in-out;
+}
 </style>
