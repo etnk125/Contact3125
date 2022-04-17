@@ -45,6 +45,8 @@ app.post("/contacts/:id", editController);
 
 // delete one contact
 app.delete("/contacts/:id", deleteController);
+// follow requirement
+app.delete("/contact/:id", deleteController);
 
 // login
 app.post("/login", loginController);
