@@ -28,7 +28,13 @@
     </div>
     <div class="required field">
       <label>Mobile No</label>
-      <input required type="tel" pattern="[+]{0,1}[0-9]{10,15}" placeholder="e.g. +66912345678 or 0912345678" v-model="contact.mobile" />
+      <input
+        required
+        type="tel"
+        pattern="[+]{0,1}[0-9]{10,15}"
+        placeholder="e.g. +66912345678 or 0912345678"
+        v-model="contact.mobile"
+      />
     </div>
 
     <!-- non require -->
@@ -96,5 +102,8 @@ export default {
   width: 80%;
   margin: 0 auto;
   display: flex;
+}
+.dimmer:hover {
+  cursor: pointer;
 }
 </style>
