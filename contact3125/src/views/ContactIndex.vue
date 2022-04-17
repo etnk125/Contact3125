@@ -1,30 +1,32 @@
 <template>
-  <sui-segment id="upper-segment" color="teal">
-    <div>
-      <sui-label ribbon color="teal">Contacts</sui-label>
-    </div>
-    <div>
-      <form @submit.prevent="submitHandler">
-        <sui-input fluid placeholder="Search..." v-model="query" />
-      </form>
-    </div>
+  <sui-segment>
+    <sui-segment id="upper-segment" color="teal">
+      <div>
+        <sui-label ribbon color="teal">Contacts</sui-label>
+      </div>
+      <div>
+        <form @submit.prevent="submitHandler">
+          <sui-input fluid placeholder="Search..." v-model="query" />
+        </form>
+      </div>
 
-    <div class="add-button-wrapper">
-      <router-link :to="{name:'ContactAdd'}">
-        <sui-button id="add-button" color="orange">+ Add</sui-button>
-      </router-link>
-    </div>
+      <div class="add-button-wrapper">
+        <router-link :to="{name:'ContactAdd'}">
+          <sui-button id="add-button" color="orange">+ Add</sui-button>
+        </router-link>
+      </div>
+    </sui-segment>
+    <suspense>
+      <template #fallback>
+        <sui-icon name="spinner" loading />
+      </template>
+      <template #default>
+        <sui-segment>
+          <contact-card-list :query="query" />
+        </sui-segment>
+      </template>
+    </suspense>
   </sui-segment>
-  <suspense>
-    <template #fallback>
-      <sui-icon name="spinner" loading />
-    </template>
-    <template #default>
-      <sui-segment>
-        <contact-card-list :query="query" />
-      </sui-segment>
-    </template>
-  </suspense>
 </template>
 
 <script>
