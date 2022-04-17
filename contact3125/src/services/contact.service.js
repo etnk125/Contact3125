@@ -1,6 +1,6 @@
 import httpClient from "./http";
 
-export async function getContactList(q = "") {
+export async function getContactList() {
   return (await httpClient.get("/contacts")).data;
 }
 
@@ -17,6 +17,5 @@ export async function getContact(id = "") {
 }
 
 export async function deleteContact(id = "") {
-  console.log("delete");
   return (await httpClient.delete("/contacts/" + id)).data;
 }

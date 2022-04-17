@@ -21,7 +21,7 @@
     </template>
     <template #default>
       <sui-segment>
-        <contact-card-list :query="query" key="cards" />
+        <contact-card-list :query="query" />
       </sui-segment>
     </template>
   </suspense>
@@ -43,9 +43,7 @@ export default {
   },
   methods: {
     submitHandler() {
-      console.log(this.query);
       this.$router.push({ name: "ContactIndex", query: { q: this.query } });
-      // this.query = "";
     },
     async fetchData() {
       try {
@@ -61,9 +59,6 @@ export default {
 </script>
 
 <style scoped>
-form {
-  /* display: inline; */
-}
 #upper-segment {
   display: grid;
   grid-template-columns: 1fr 13fr 2fr;
@@ -84,8 +79,6 @@ form {
 .loading {
   display: flex;
   margin: 2rem auto;
-  /* justify-content: center;
-  justify-items: center; */
   justify-self: center;
 }
 </style>

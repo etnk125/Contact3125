@@ -53,9 +53,7 @@ export default {
       this.saved = false;
       try {
         const resp = await editContact(this.contact);
-        console.log(resp);
         if (resp.code == 11000) {
-          //implement unique handle here
           store.addMessage("please enter unique id");
           console.error("please enter unique id");
           return;
@@ -70,9 +68,8 @@ export default {
   async created() {
     try {
       this.contact = await getContact(useRoute().params.id);
-      console.log(this.contact);
     } catch (err) {
-      console.log("error occur when get contact by id");
+      store.addMessage("error occur when get contact by id");
       console.error(err);
     }
   },

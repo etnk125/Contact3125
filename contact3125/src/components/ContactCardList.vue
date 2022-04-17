@@ -24,25 +24,22 @@ export default {
   props: {
     query: String,
   },
-  data() {
-    return {
-      // contacts: [],
-    };
-  },
   async setup() {
-    const contacts = ref(await getContactList());
+    let contacts = [];
+    try {
+      contacts = ref(await getContactList());
+    } catch (err) {
+      store.addMessage("something went wrong");
+      console.error(err);
+    }
     return { contacts };
   },
-  // async created() {
-  //   this.fetchContact();
-  // },
   components: { ContactCard },
   methods: {
     deleteContact,
     async deleteHandler(id) {
       try {
         const resp = await this.deleteContact(id);
-        console.log(resp);
       } catch (err) {
         store.addMessage("something went wrong");
         console.error(err);
@@ -50,7 +47,12 @@ export default {
       this.fetchContact();
     },
     async fetchContact() {
-      this.contacts = await getContactList();
+      try {
+        this.contacts = await getContactList();
+      } catch (err) {
+        store.addMessage("something went wrong");
+        console.error(err);
+      }
     },
   },
 };

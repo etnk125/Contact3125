@@ -28,6 +28,7 @@ const router = createRouter({
 
 import store from "../store";
 
+// clear message before each route
 router.beforeEach((to, from, next) => {
   store.clearMessage();
   next();

@@ -1,18 +1,18 @@
 <template>
   <TheNavbar />
-  <Messages />
+  <MessageList />
   <router-view />
 </template>
 
 <script>
 import TheNavbar from "./components/TheNavbar.vue";
-import Messages from "./components/Messages.vue";
+import MessageList from "./components/MessageList.vue";
 
 export default {
   name: "App",
   components: {
     TheNavbar,
-    Messages,
+    MessageList,
   },
 };
 </script>

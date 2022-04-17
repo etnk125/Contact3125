@@ -1,12 +1,12 @@
 <template>
   <div v-for="message in errMessages">
-    <TheMessage :message="message.message" :ID="message.ID" />
+    <Message :message="message.message" :ID="message.ID" />
   </div>
 </template>
 
 <script>
 import store from "../store";
-import TheMessage from "./TheMessage.vue";
+import Message from "./Message.vue";
 
 export default {
   computed: {
@@ -15,7 +15,7 @@ export default {
     },
   },
   components: {
-    TheMessage,
+    Message,
   },
 };
 </script>

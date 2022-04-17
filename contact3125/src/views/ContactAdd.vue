@@ -50,9 +50,9 @@ export default {
       this.saved = false;
       try {
         const resp = await addContact(this.contact);
-        console.log(resp);
+
         if (resp.code == 11000) {
-          //implement unique handle here
+          // this id already taken
           store.addMessage("please enter unique id");
           console.error("please enter unique id");
           return;

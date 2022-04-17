@@ -1,5 +1,4 @@
 <template>
-  <!-- <div @click="onDelete">this is message{{message}}{{ID}}</div> -->
   <sui-message negative>
     <sui-icon name="close" @click="onDelete" />
     <sui-message-header>{{message||"something went wrong"}}</sui-message-header>

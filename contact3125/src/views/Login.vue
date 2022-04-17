@@ -1,13 +1,4 @@
 <template>
-  <!-- <sui-message v-if="errorMessage" negative>
-    <sui-icon name="close" @click="errorMessage=false" />
-    <sui-message-header>something went wrong</sui-message-header>
-  </sui-message>
-  <sui-message v-if="matchMessage" negative>
-    <sui-icon name="close" @click="matchMessage=false" />
-    <sui-message-header>username or password are not match</sui-message-header>
-  </sui-message>-->
-
   <!-- main content -->
   <main>
     <sui-segment class="login-container" stacked>
@@ -44,8 +35,6 @@ import store from "../store";
 export default {
   data() {
     return {
-      errorMessage: false,
-      matchMessage: false,
       loading: false,
       user: { username: "bob", password: "1234" },
     };
@@ -54,13 +43,11 @@ export default {
     notMatch() {
       // tell user that not match
       store.addMessage("wrong username or password");
-      // console.log("wrong username or password");
-      this.matchMessage = true;
+     
     },
     errorBound() {
       // tell user that something went wrong
       store.addMessage("something went wrong");
-      this.errorMessage = true;
     },
     async submitHandler() {
       this.loading = true;
@@ -89,7 +76,5 @@ main {
 .login-container {
   margin: 2rem;
   grid-column: 2;
-  /* margin: 0 auto;
-  width: clamp(20ch, 50%, 30ch); */
 }
 </style>
