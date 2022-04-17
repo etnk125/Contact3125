@@ -26,5 +26,12 @@ const router = createRouter({
   routes,
 });
 
+import store from "../store";
+
+router.beforeEach((to, from, next) => {
+  store.clearMessage();
+  next();
+});
+
 // export router
 export default router;
