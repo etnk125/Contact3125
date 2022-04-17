@@ -12,6 +12,7 @@
           :contact="this.contact"
           :edit="true"
           :dimmed="saved"
+          :onClose="()=>{saved=false}"
         />
       </sui-segment>
     </sui-segment-group>

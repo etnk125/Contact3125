@@ -59,9 +59,10 @@
     </sui-button-group>
   </sui-form>
   <div v-if="dimmed">
-    <sui-dimmer active="dimmed" page @click="dimmed = false">
+    <sui-dimmer :active="true" page @click="onClose">
       <sui-header as="h2" icon inverted>
         <sui-icon name="save" />Saved Contact!
+        <sui-header-subheader tiny>press to continue</sui-header-subheader>
       </sui-header>
     </sui-dimmer>
   </div>
@@ -77,6 +78,7 @@ export default {
     contact: Object,
     edit: Boolean,
     dimmed: Boolean,
+    onClose: Function,
   },
   methods: {
     async formHandler() {
