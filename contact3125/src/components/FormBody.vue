@@ -58,7 +58,7 @@
         {{edit?"Save":'Add'}}
       </sui-button>
       <router-link to="/contact">
-        <sui-button basic color="blue">
+        <sui-button basic color="blue" id="close-button">
           <sui-icon color="red" name="close" />Close
         </sui-button>
       </router-link>
@@ -105,5 +105,9 @@ export default {
 }
 .dimmer:hover {
   cursor: pointer;
+}
+#close-button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 </style>
