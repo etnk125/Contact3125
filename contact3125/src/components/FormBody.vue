@@ -70,19 +70,19 @@
 <script>
 export default {
   data() {
-    return { loading: false, dimmed: false };
+    return { loading: false };
   },
   props: {
     submitHandler: Function,
     contact: Object,
-    edit: false,
+    edit: Boolean,
+    dimmed: Boolean,
   },
   methods: {
     async formHandler() {
       this.loading = true;
       await this.submitHandler();
       this.loading = false;
-      this.dimmed = true;
     },
   },
 };

@@ -32,6 +32,7 @@ import { ref, onMounted } from "vue";
 import ContactCardList from "../components/ContactCardList.vue";
 import { getContactList } from "../services/contact.service";
 import { useRoute } from "vue-router";
+import store from "../store";
 
 export default {
   data() {
@@ -47,8 +48,13 @@ export default {
       // this.query = "";
     },
     async fetchData() {
-      const data = await getContactList();
-      return data;
+      try {
+        const data = await getContactList();
+        return data;
+      } catch (err) {
+        store.addMessage("something went wrong");
+        console.error(err);
+      }
     },
   },
 };
