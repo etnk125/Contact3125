@@ -2,8 +2,8 @@
   <sui-card-group>
     <ContactCard
       v-for="contact in contacts.filter((contact) =>
-        contact.firstname.includes(this.query) ||
-        contact.lastname.includes(this.query))"
+        contact.firstname.toLowerCase().includes(query.toLowerCase()) ||
+        contact.lastname.toLowerCase().includes(query.toLowerCase()))"
       :contact="contact"
       :editRoute="{name:'ContactEdit'}"
       :deleteContact="deleteHandler"
