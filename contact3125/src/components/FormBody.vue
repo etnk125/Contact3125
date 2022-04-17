@@ -28,18 +28,18 @@
     </div>
     <div class="required field">
       <label>Mobile No</label>
-      <input required type="tel" placeholder="Mobile No" v-model="contact.mobile" />
+      <input required type="tel" pattern="[+]{0,1}[0-9]{10,15}" placeholder="e.g. +66912345678 or 0912345678" v-model="contact.mobile" />
     </div>
 
     <!-- non require -->
 
     <div class="field">
       <label>Email</label>
-      <input type="text" placeholder="Email" v-model="contact.email" />
+      <input type="email" placeholder="e.g. bob@example.com" v-model="contact.email" />
     </div>
     <div class="field">
       <label>Facebook</label>
-      <input type="url" placeholder="Facebook" v-model="contact.facebook" />
+      <input type="url" placeholder="Facebook URL" v-model="contact.facebook" />
     </div>
     <div class="field">
       <label>Image Url</label>
